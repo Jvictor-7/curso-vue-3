@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Vue 3</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Curso de Vue 3</h1>
+
+        <p>{{ name }} {{ lastName }}</p>
+
+        <img v-bind:src="product.image" v-bind:alt="product.title" style="max-width: 200px;">
+        <!-- v-if ele nem renderiza a tag, v-if é melhor -->
+        <strong v-if="product.stars > 0"> {{ product.stars }}</strong>
+
+        <img :src="product2.image" :alt="product2.title" style="max-width: 200px;">
+        <!-- v-show simplesmente coloca um display=none, mas a tag ainda continua no html -->
+        <strong v-show="product2.stars > 0"> {{ product2.stars }}</strong>
+
+        <div v-if="number == 2">Dois</div>
+        <div v-else-if="number == 3">Três</div>
+        <div v-else>Desconhecido</div>
+
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
