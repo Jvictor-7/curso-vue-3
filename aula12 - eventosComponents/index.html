@@ -26,7 +26,8 @@
                 <li v-for="(product, index) in products" :key="index">
                     <product-detail 
                         :product="product"
-                        :product-in-cart="inCart(cart)"
+                        :product-in-cart="inCart(product)"
+                        @add-prod-cart="addCart"
                         >
                     </product-detail>
                 </li>
